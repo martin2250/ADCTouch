@@ -10,7 +10,7 @@ int ADCTouchClass::read(byte ADCChannel, int samples)
 {
 #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
 	uint8_t digitalPin = pgm_read_byte(analog_pin_to_digital_pin + ADCChannel);
-	if (digitalPin == NOT_A_PIN) return;
+	if (digitalPin == NOT_A_PIN) return -1;
 #endif
 	long _value = 0;
 	for(int _counter = 0; _counter < samples; _counter ++)
