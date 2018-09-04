@@ -8,14 +8,14 @@
 
 int ADCTouchClass::read(byte ADCChannel, int samples)
 {
-#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__ATtiny13__)
 	uint8_t digitalPin = pgm_read_byte(analog_pin_to_digital_pin + ADCChannel);
 	if (digitalPin == NOT_A_PIN) return -1;
 #endif
 	long _value = 0;
 	for(int _counter = 0; _counter < samples; _counter ++)
 	{
-#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__ATtiny13__)
 		// set the digital pin corresponding to the analog pin as an input pin with a pullup resistor
 		// this will start charging the capacitive element attached to that pin
 		pinMode(digitalPin, INPUT_PULLUP);
@@ -36,7 +36,7 @@ int ADCTouchClass::read(byte ADCChannel, int samples)
 		// ADSC is cleared when the conversion finishes
 		while((ADCSRA & (1 << ADSC)));
 
-#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__ATtiny13__)
 		pinMode(digitalPin, INPUT);
 #else
 		pinMode(ADCChannel, INPUT);
