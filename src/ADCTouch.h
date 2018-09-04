@@ -8,7 +8,7 @@
 
 #include "Arduino.h"
 
-#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+#if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__ATtiny13__)
 const uint8_t PROGMEM analog_pin_to_digital_pin[] = {
 	5, /* 0 */
 	2,
