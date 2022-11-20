@@ -38,6 +38,7 @@ int ADCTouchClass::read(byte ADCChannel, int samples)
 
 #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__ATtiny13__)
 		pinMode(digitalPin, INPUT);
+		digitalWrite(digitalPin,LOW); // required due to a bug in the Digispark Arduino core, see GitHub Issue #6
 #else
 		pinMode(ADCChannel, INPUT);
 #endif
