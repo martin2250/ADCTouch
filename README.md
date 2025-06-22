@@ -23,4 +23,4 @@ To Acquire a reading, the library does the following:
 
 The accuracy is really good, most often even the LSB/smalles digit can still yield usable data and just vary by a single unit between readings (at only 100 samples, more will mean even less variation). The sensitivity is phenomenal, with a large enough surface, it can sense a person in more than 2 feet distance.
 
-A more accurate explanation can be found [here](http://tuomasnylund.fi/drupal6/content/capacitive-touch-sensing-avr-and-single-adc-pin)
+A more accurate explanation can be found [~here~](http://tuomasnylund.fi/drupal6/content/capacitive-touch-sensing-avr-and-single-adc-pin) (the domain is no longer active -> [archive link](https://web.archive.org/web/20170912232909/http://tuomasnylund.fi/drupal6/content/capacitive-touch-sensing-avr-and-single-adc-pin))
